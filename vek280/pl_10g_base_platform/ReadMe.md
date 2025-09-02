@@ -164,5 +164,5 @@ Ping Test:
 
 Board Setup:
 
-![Board Setup](./images/board_setup.jpg)
+![Board Setup](./images/board_setup.png)
 
