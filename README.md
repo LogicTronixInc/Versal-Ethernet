@@ -6,4 +6,4 @@ We like to thank [Ajaya Dahal](https://github.com/ajayadaha1) for his support!
 
 Board Setup:
 
-![Board Setup](vek280/pl_10g_base_platform/images/board_setup.jpg)
+![Board Setup](vek280/pl_10g_base_platform/images/board_setup.png)
