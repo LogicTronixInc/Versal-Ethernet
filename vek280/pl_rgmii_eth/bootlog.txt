@@ -1,0 +1,755 @@
+0.012]****************************************
+[0.045]Xilinx Versal Platform Loader and Manager 
+[0.080]Release 2025.2   Apr  5 2011  -  23:00:00
+[0.117]Platform Version: v2.0 PMC: v2.0, PS: v2.0
+[0.156]BOOTMODE: 0xE, MULTIBOOT: 0xF0000000
+[0.190]****************************************
+[0.395]Non Secure Boot
+[3.490]PLM Initialization Time 
+[3.514]***********Boot PDI Load: Started***********
+[3.568]Loading PDI from SD1_LS
+[3.592]Monolithic/Master Device
+[425.137]421.585 ms: PDI initialization time
+[425.173]+++Loading Image#: 0x1, Name: lpd, Id: 0x04210002
+[425.217]---Loading Partition#: 0x1, Id: 0xC
+[479.769] 54.516 ms for Partition#: 0x1, Size: 9760 Bytes
+[484.770]---Loading Partition#: 0x2, Id: 0x0
+[501.356] 12.640 ms for Partition#: 0x2, Size: 48896 Bytes
+PSM Firmware version: 2025.2 [Build: Nov 13 2025 10:49:34 ] 
+[509.007]+++Loading Image#: 0x2, Name: fpd, Id: 0x0420C003
+[514.126]---Loading Partition#: 0x3, Id: 0x8
+[522.299] 4.228 ms for Partition#: 0x3, Size: 4544 Bytes
+[524.443]+++Loading Image#: 0x3, Name: pl_cfi, Id: 0x18700000
+[529.840]---Loading Partition#: 0x4, Id: 0x3
+[782.786] 248.999 ms for Partition#: 0x4, Size: 822224 Bytes
+[785.270]---Loading Partition#: 0x5, Id: 0x5
+[950.763] 161.546 ms for Partition#: 0x5, Size: 540944 Bytes
+[953.521]+++Loading Image#: 0x4, Name: apu_subsystem, Id: 0x1C000000
+[959.253]---Loading Partition#: 0x6, Id: 0x0
+[981.459] 18.258 ms for Partition#: 0x6, Size: 78224 Bytes
+[983.772]---Loading Partition#: 0x7, Id: 0x0
+[996.527] 8.808 ms for Partition#: 0x7, Size: 40960 Bytes
+[998.754]---Loading Partition#: 0x8, Id: 0x0
+[1008.092] 5.392 ms for Partition#: 0x8, Size: 14384 Bytes
+[1010.405]---Loading Partition#: 0x9, Id: 0x0
+[1249.152] 234.714 ms for Partition#: 0x9, Size: 1171744 Bytes
+[1251.849]***********Boot PDI Load: Done***********
+[1256.356]271.834 ms: ROM Time
+[1259.101]Total PLM Boot Time 
+NOTICE:  TF-A running on SILICON 0
+NOTICE:  BL31: Secure code at 0x0
+NOTICE:  BL31: Non secure code at 0x8000000
+NOTICE:  BL31: v2.12.0(release):xlnx_rebase_v2.12_2025.1-165-g894ecd073-dirty
+NOTICE:  BL31: Built : 08:14:53, Oct 16 2025
+
+
+U-Boot 2025.01-g5e0d8abc7e09 (Nov 12 2025 - 07:44:59 +0000)
+
+CPU:   Versal
+Silicon: v2
+Chip:  v2
+Model: Xilinx Versal
+DRAM:  2 GiB (effective 4 GiB)
+EL Level:	EL2
+Multiboot:	0
+Core:  36 devices, 20 uclasses, devicetree: board
+MMC:   mmc@f1050000: 0
+Loading Environment from FAT... *** Error - No Valid Environment Area found
+*** Warning - bad env area, using default environment
+
+In:    serial@ff000000
+Out:   serial@ff000000
+Err:   serial@ff000000
+Bootmode: LVL_SHFT_SD_MODE1
+Net:   ADIN1300 PHY detected at addr 2
+AXI EMAC: a4000000, phyaddr 2, interface rgmii-id
+ADIN1300 PHY detected at addr 1
+adin_get_reg_value: failed to find adi,rx-internal-delay-ps, using default 0
+adin_get_reg_value: failed to find adi,tx-internal-delay-ps, using default 0
+
+ZYNQ GEM: ff0c0000, mdio bus ff0c0000, phyaddr 1, interface rgmii-id
+
+Warning: ethernet@ff0c0000 (eth1) using random MAC address - c6:13:5f:e7:df:78
+eth1: ethernet@ff0c0000, eth0: ethernet@a4000000
+Hit any key to stop autoboot:  0 
+switch to partitions #0, OK
+mmc0 is current device
+Scanning mmc 0:1...
+Found U-Boot script /boot.scr
+3833 bytes read in 13 ms (287.1 KiB/s)
+## Executing script at 20000000
+Trying to load boot images from mmc0
+31971840 bytes read in 2161 ms (14.1 MiB/s)
+## Flattened Device Tree blob at 00001000
+   Booting using the fdt blob at 0x001000
+Working FDT set to 1000
+   Loading Device Tree to 0000000077e6b000, end 0000000077e8118e ... OK
+Working FDT set to 77e6b000
+No RNG device
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd083]
+[    0.000000] Linux version 6.12.40-xilinx-g31626ef92ff1 (oe-user@oe-host) (aarch64-amd-linux-gcc (GCC) 13.4.0, GNU ld (GNU Binutils) 2.42.0.20240723) #1 SMP Fri Nov  7 15:28:23 UTC 2025
+[    0.000000] KASLR disabled due to lack of seed
+[    0.000000] Machine model: Xilinx Versal
+[    0.000000] earlycon: pl11 at MMIO32 0x00000000ff000000 (options '115200n8')
+[    0.000000] printk: legacy bootconsole [pl11] enabled
+[    0.000000] efi: UEFI not found.
+[    0.000000] OF: reserved mem: 0x0000000800000000..0x000000087fffffff (2097152 KiB) nomap non-reusable buffer@0
+[    0.000000] OF: reserved mem: 0x0000050000000000..0x00000501ffffffff (8388608 KiB) nomap non-reusable buffer@1
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000000000-0x00000000ffffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000087fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000007fffffff]
+[    0.000000]   node   0: [mem 0x0000000800000000-0x000000087fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x000000087fffffff]
+[    0.000000] cma: Reserved 256 MiB at 0x0000000067e00000 on node -1
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.5
+[    0.000000] percpu: Embedded 31 pages/cpu s89816 r8192 d28968 u126976
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] CPU features: detected: Spectre-v2
+[    0.000000] CPU features: detected: Spectre-v3a
+[    0.000000] CPU features: detected: Spectre-BHB
+[    0.000000] CPU features: detected: ARM erratum 1742098
+[    0.000000] CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+[    0.000000] alternatives: applying boot alternatives
+[    0.000000] Kernel command line: console=ttyAMA0 earlycon=pl011,mmio32,0xFF000000,115200n8 root=/dev/mmcblk0p2 ro rootwait
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1048576
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] software IO TLB: area num 2.
+[    0.000000] software IO TLB: mapped [mem 0x0000000063e00000-0x0000000067e00000] (64MB)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=16 to nr_cpu_ids=2.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 160 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GICv3: GICv3 features: 16 PPIs
+[    0.000000] GICv3: GICD_CTRL.DS=0, SCR_EL3.FIQ=1
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000f9080000
+[    0.000000] ITS [mem 0xf9020000-0xf903ffff]
+[    0.000000] ITS@0x00000000f9020000: allocated 65536 Devices @2500000 (flat, esz 8, psz 64K, shr 0)
+[    0.000000] ITS: using cache flushing for cmd queue
+[    0.000000] GICv3: using LPI property table @0x00000000024f0000
+[    0.000000] GIC: using cache flushing for LPI property table
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x0000000002580000
+[    0.000000] ITS queue timeout (64 0)
+[    0.000000] ITS cmd its_build_mapc_cmd failed
+[    0.000000] ITS queue timeout (128 0)
+[    0.000000] ITS cmd its_build_invall_cmd failed
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 99.99MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1ffffffffffffff max_cycles: 0x1710239320, max_idle_ns: 440795206806 ns
+[    0.000000] sched_clock: 57 bits at 100MHz, resolution 10ns, wraps every 4398046511100ns
+[    0.008371] Console: colour dummy device 80x25
+[    0.012877] Calibrating delay loop (skipped), value calculated using timer frequency.. 199.99 BogoMIPS (lpj=399999)
+[    0.023417] pid_max: default: 32768 minimum: 301
+[    0.028159] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.035633] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.044688] rcu: Hierarchical SRCU implementation.
+[    0.049538] rcu: 	Max phase no-delay instances is 1000.
+[    0.054941] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    0.063326] EFI services will not be available.
+[    0.067999] smp: Bringing up secondary CPUs ...
+[    0.072900] Detected PIPT I-cache on CPU1
+[    0.072944] GICv3: CPU1: found redistributor 1 region 0:0x00000000f90a0000
+[    0.072953] GICv3: CPU1: using allocated LPI pending table @0x0000000002590000
+[    1.232958] ITS queue timeout (192 0)
+[    1.232962] ITS cmd its_build_mapc_cmd failed
+[    2.392972] ITS queue timeout (256 0)
+[    2.392975] ITS cmd its_build_invall_cmd failed
+[    2.392994] CPU1: Booted secondary processor 0x0000000001 [0x410fd083]
+[    2.393058] smp: Brought up 1 node, 2 CPUs
+[    2.438364] SMP: Total of 2 processors activated.
+[    2.443111] CPU: All CPU(s) started at EL2
+[    2.447243] CPU features: detected: 32-bit EL0 Support
+[    2.452427] CPU features: detected: CRC32 instructions
+[    2.457644] alternatives: applying system-wide alternatives
+[    2.463779] Memory: 1658720K/4194304K available (18432K kernel code, 2358K rwdata, 5660K rodata, 4608K init, 498K bss, 2268580K reserved, 262144K cma-reserved)
+[    2.478640] devtmpfs: initialized
+[    2.486663] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    2.496523] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    2.505142] 24816 pages in range for non-PLT usage
+[    2.505151] 516336 pages in range for PLT usage
+[    2.510099] pinctrl core: initialized pinctrl subsystem
+[    2.520257] DMI not present or invalid.
+[    2.525616] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    2.532159] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+[    2.539550] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    2.547728] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    2.555873] audit: initializing netlink subsys (disabled)
+[    2.561439] audit: type=2000 audit(2.464:1): state=initialized audit_enabled=0 res=1
+[    2.561675] thermal_sys: Registered thermal governor 'step_wise'
+[    2.569361] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    2.582302] ASID allocator initialised with 65536 entries
+[    2.587867] Serial: AMBA PL011 UART driver
+[    2.596059] /axi/interrupt-controller@f9000000: Fixed dependency cycle(s) with /axi/interrupt-controller@f9000000
+[    2.618499] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    2.625363] HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+[    2.631691] HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+[    2.638540] HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+[    2.644861] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    2.651710] HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+[    2.658036] HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+[    2.664890] HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+[    2.739270] raid6: neonx8   gen()  4192 MB/s
+[    2.811625] raid6: neonx4   gen()  4097 MB/s
+[    2.883975] raid6: neonx2   gen()  3389 MB/s
+[    2.956324] raid6: neonx1   gen()  2459 MB/s
+[    3.028680] raid6: int64x8  gen()  2365 MB/s
+[    3.101034] raid6: int64x4  gen()  2301 MB/s
+[    3.173385] raid6: int64x2  gen()  2237 MB/s
+[    3.245750] raid6: int64x1  gen()  1715 MB/s
+[    3.250057] raid6: using algorithm neonx8 gen() 4192 MB/s
+[    3.323548] raid6: .... xor() 2999 MB/s, rmw enabled
+[    3.328559] raid6: using neon recovery algorithm
+[    3.333697] iommu: Default domain type: Translated
+[    3.338541] iommu: DMA domain TLB invalidation policy: strict mode
+[    3.344983] SCSI subsystem initialized
+[    3.348885] usbcore: registered new interface driver usbfs
+[    3.354442] usbcore: registered new interface driver hub
+[    3.359818] usbcore: registered new device driver usb
+[    3.364977] mc: Linux media interface: v0.10
+[    3.369304] videodev: Linux video capture interface: v2.00
+[    3.374856] pps_core: LinuxPPS API ver. 1 registered
+[    3.379861] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    3.389084] PTP clock support registered
+[    3.393055] EDAC MC: Ver: 3.0.0
+[    3.396389] scmi_core: SCMI protocol bus registered
+[    3.401455] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.409931] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.418406] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.426874] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.435345] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.443821] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.452279] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.460749] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.469203] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.477673] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.486282] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.494766] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.503248] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.511723] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.520194] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.528664] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.537119] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.545595] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.554050] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.562522] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.571101] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.579572] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.588043] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.596513] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.604986] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.613461] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.621922] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.630389] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.638845] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.647317] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.655890] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.664365] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.672835] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.681305] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.689780] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.698255] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.706713] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.715183] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.723639] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.732112] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.740682] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.749156] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.757629] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.766107] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.774577] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.783050] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.791503] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.799976] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.808431] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.816899] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.825472] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.833945] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.842422] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.850894] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.859370] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.867842] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.876298] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.884766] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.893221] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.901692] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.910242] zynqmp-ipi-mbox child@ff330000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.918704] zynqmp-ipi-mbox child@ff340000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.927163] zynqmp-ipi-mbox child@ff350000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.935621] zynqmp-ipi-mbox child@ff360000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.944077] zynqmp-ipi-mbox child@ff370000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.952540] zynqmp-ipi-mbox child@ff380000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.960992] zynqmp-ipi-mbox child@ff3a0000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.969449] zynqmp-ipi-mbox child@ff320000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.977896] zynqmp-ipi-mbox child@ff390000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.986352] zynqmp-ipi-mbox child@ff310000: Registered ZynqMP IPI mbox with TX/RX channels.
+[    3.995093] FPGA manager framework
+[    3.998677] Advanced Linux Sound Architecture Driver Initialized.
+[    4.005213] Bluetooth: Core ver 2.22
+[    4.008844] NET: Registered PF_BLUETOOTH protocol family
+[    4.014208] Bluetooth: HCI device and connection manager initialized
+[    4.020624] Bluetooth: HCI socket layer initialized
+[    4.025547] Bluetooth: L2CAP socket layer initialized
+[    4.030649] Bluetooth: SCO socket layer initialized
+[    4.035874] clocksource: Switched to clocksource arch_sys_counter
+[    4.042241] VFS: Disk quotas dquot_6.6.0
+[    4.046222] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    4.058708] NET: Registered PF_INET protocol family
+[    4.063754] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    4.072274] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    4.080903] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    4.088723] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    4.096792] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    4.104453] TCP: Hash tables configured (established 16384 bind 16384)
+[    4.111090] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    4.117890] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    4.125182] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    4.131162] RPC: Registered named UNIX socket transport module.
+[    4.137149] RPC: Registered udp transport module.
+[    4.141895] RPC: Registered tcp transport module.
+[    4.146642] RPC: Registered tcp-with-tls transport module.
+[    4.152176] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    4.158683] PCI: CLS 0 bytes, default 64
+[    4.163396] Initialise system trusted keyrings
+[    4.168006] workingset: timestamp_bits=46 max_order=19 bucket_order=0
+[    4.174892] NFS: Registering the id_resolver key type
+[    4.180024] Key type id_resolver registered
+[    4.184257] Key type id_legacy registered
+[    4.188314] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    4.195079] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    4.202656] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    4.240653] NET: Registered PF_ALG protocol family
+[    4.245497] xor: measuring software checksum speed
+[    4.250820]    8regs           :  6713 MB/sec
+[    4.255668]    32regs          :  7286 MB/sec
+[    4.260646]    arm64_neon      :  5668 MB/sec
+[    4.265043] xor: using function: 32regs (7286 MB/sec)
+[    4.270142] Key type asymmetric registered
+[    4.274275] Asymmetric key parser 'x509' registered
+[    4.279234] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    4.286712] io scheduler mq-deadline registered
+[    4.291290] io scheduler kyber registered
+[    4.295355] io scheduler bfq registered
+[    4.302055] ledtrig-cpu: registered to indicate activity on CPUs
+[    4.333983] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    4.341415] Serial: AMBA driver
+[    4.349727] brd: module loaded
+[    4.355136] loop: module loaded
+[    4.361353] CAN device driver interface
+[    4.365713] usbcore: registered new interface driver asix
+[    4.371198] usbcore: registered new interface driver ax88179_178a
+[    4.377374] usbcore: registered new interface driver cdc_ether
+[    4.383282] usbcore: registered new interface driver net1080
+[    4.389018] usbcore: registered new interface driver cdc_subset
+[    4.395024] usbcore: registered new interface driver zaurus
+[    4.400671] usbcore: registered new interface driver cdc_ncm
+[    4.406406] usbcore: registered new interface driver r8153_ecm
+[    4.412470] VFIO - User Level meta-driver version: 0.3
+[    4.418117] usbcore: registered new interface driver uas
+[    4.423508] usbcore: registered new interface driver usb-storage
+[    4.429581] usbcore: registered new device driver onboard-usb-dev
+[    4.436104] i2c_dev: i2c /dev entries driver
+[    4.441519] usbcore: registered new interface driver uvcvideo
+[    4.447328] Driver for 1-wire Dallas network protocol.
+[    4.452988] Bluetooth: HCI UART driver ver 2.3
+[    4.457480] Bluetooth: HCI UART protocol H4 registered
+[    4.462664] Bluetooth: HCI UART protocol BCSP registered
+[    4.468038] Bluetooth: HCI UART protocol LL registered
+[    4.473222] Bluetooth: HCI UART protocol ATH3K registered
+[    4.478677] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[    4.485030] Bluetooth: HCI UART protocol Intel registered
+[    4.490491] Bluetooth: HCI UART protocol QCA registered
+[    4.495792] usbcore: registered new interface driver bcm203x
+[    4.501525] usbcore: registered new interface driver bpa10x
+[    4.507171] usbcore: registered new interface driver bfusb
+[    4.512733] usbcore: registered new interface driver btusb
+[    4.518300] usbcore: registered new interface driver ath3k
+[    4.524024] EDAC ZynqMP-OCM: ECC not enabled
+[    4.528608] sdhci: Secure Digital Host Controller Interface driver
+[    4.534857] sdhci: Copyright(c) Pierre Ossman
+[    4.539251] sdhci-pltfm: SDHCI platform and OF driver helper
+[    4.545333] SMCCC: SOC_ID: ID = jep106:0049:0000 Revision = 0x00000000
+[    4.552022] zynqmp_firmware_probe Platform Management API v1.0
+[    4.557917] zynqmp_firmware_probe Trustzone version v1.0
+[    4.563760] xlnx_event_manager xlnx_event_manager: SGI 15 Registered over TF-A
+[    4.571067] xlnx_event_manager xlnx_event_manager: Xilinx Event Management driver probed
+[    4.628685] securefw securefw: securefw probed
+[    4.633539] xilinx_ecdsa xilinx_ecdsa.0: will run requests pump with realtime priority
+[    4.641806] zynqmp-aes zynqmp-aes.0: will run requests pump with realtime priority
+[    4.649680] zynqmp-sha3-384 zynqmp-sha3-384.0: will run requests pump with realtime priority
+[    4.658322] usbcore: registered new interface driver usbhid
+[    4.663957] usbhid: USB HID core driver
+[    4.669616] ARM CCI_500 PMU driver probed
+[    4.669921] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 (0,8000003f) counters available
+[    4.683614] fpga_manager fpga0: Xilinx Versal FPGA Manager registered
+[    4.690650] pktgen: Packet Generator for packet performance testing. Version: 2.75
+[    4.698835] Initializing XFRM netlink socket
+[    4.703189] NET: Registered PF_INET6 protocol family
+[    4.708631] Segment Routing with IPv6
+[    4.712364] In-situ OAM (IOAM) with IPv6
+[    4.716384] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    4.722640] NET: Registered PF_PACKET protocol family
+[    4.727751] NET: Registered PF_KEY protocol family
+[    4.732598] can: controller area network core
+[    4.737014] NET: Registered PF_CAN protocol family
+[    4.741850] can: raw protocol
+[    4.744843] can: broadcast manager protocol
+[    4.749066] can: netlink gateway - max_hops=1
+[    4.753545] Bluetooth: RFCOMM TTY layer initialized
+[    4.758479] Bluetooth: RFCOMM socket layer initialized
+[    4.763680] Bluetooth: RFCOMM ver 1.11
+[    4.767465] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    4.772829] Bluetooth: BNEP filters: protocol multicast
+[    4.778104] Bluetooth: BNEP socket layer initialized
+[    4.783111] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    4.789086] Bluetooth: HIDP socket layer initialized
+[    4.794122] 8021q: 802.1Q VLAN Support v1.8
+[    4.798496] 9pnet: Installing 9P2000 support
+[    4.802853] Key type dns_resolver registered
+[    4.807263] NET: Registered PF_VSOCK protocol family
+[    4.817922] registered taskstats version 1
+[    4.822127] Loading compiled-in X.509 certificates
+[    4.833743] Btrfs loaded, zoned=no, fsverity=no
+[    4.849502] ff000000.serial: ttyAMA0 at MMIO 0xff000000 (irq = 25, base_baud = 0) is a PL011 rev3
+[    4.858497] printk: legacy console [ttyAMA0] enabled
+[    4.858497] printk: legacy console [ttyAMA0] enabled
+[    4.868531] printk: legacy bootconsole [pl11] disabled
+[    4.868531] printk: legacy bootconsole [pl11] disabled
+[    4.969393] of-fpga-region fpga-region: FPGA Region probed
+[    5.071555] cadence-qspi f1010000.spi: Couldn't determine chip select.
+[    5.078104] cadence-qspi f1010000.spi: failed to setup flash parameters -22
+[    5.085131] cadence-qspi f1010000.spi: probe with driver cadence-qspi failed with error -22
+[    5.276923] macb ff0c0000.ethernet eth0: Cadence GEM rev 0x0107010b at 0xff0c0000 irq 38 (c6:13:5f:e7:df:78)
+[    5.287277] xilinx_axienet a4000000.ethernet: autodetected 64-bit DMA range
+[    5.296035] dwc3 fe200000.usb: Configuration mismatch. dr_mode forced to gadget
+[    5.304858] rtc_zynqmp f12a0000.rtc: registered as rtc0
+[    5.310098] rtc_zynqmp f12a0000.rtc: setting system clock to 2027-06-08T10:51:06 UTC (1812451866)
+[    5.319159] cdns-i2c ff020000.i2c: can't get pinctrl, bus recovery not supported
+[    5.326872] cdns-i2c ff020000.i2c: 100 kHz mmio ff020000 irq 46
+[    5.332971] cdns-i2c ff030000.i2c: can't get pinctrl, bus recovery not supported
+[    5.340626] cdns-i2c ff030000.i2c: 100 kHz mmio ff030000 irq 47
+[    5.347114] cpufreq: cpufreq_online: CPU0: Running at unlisted initial frequency: 1399998 KHz, changing to: 1400000 KHz
+[    5.359258] of_cfs_init
+[    5.361743] of_cfs_init: OK
+[    5.364623] clk: Disabling unused clocks
+[    5.368655] PM: genpd: Disabling unused power domains
+[    5.374157] ALSA device list:
+[    5.377120]   No soundcards found.
+[    5.411299] mmc0: SDHCI controller on f1050000.mmc [f1050000.mmc] using ADMA 64-bit
+[    5.419074] Waiting for root device /dev/mmcblk0p2...
+[    5.520752] mmc0: new ultra high speed SDR104 SDHC card at address aaaa
+[    5.527704] mmcblk0: mmc0:aaaa SL32G 29.7 GiB
+[    5.536170]  mmcblk0: p1 p2
+[    5.628978] EXT4-fs (mmcblk0p2): orphan cleanup on readonly fs
+[    5.635678] EXT4-fs (mmcblk0p2): mounted filesystem 5af3ba7f-2632-4e00-9d88-47df797ad2f1 ro with ordered data mode. Quota mode: none.
+[    5.647743] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+[    5.657066] devtmpfs: mounted
+[    5.661118] Freeing unused kernel memory: 4608K
+[    5.665710] Run /sbin/init as init process
+[    5.854992] systemd[1]: systemd 255.21^ running in system mode (+PAM -AUDIT -SELINUX -APPARMOR +IMA -SMACK +SECCOMP -GCRYPT -GNUTLS +OPENSSL +ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    5.886982] systemd[1]: Detected architecture arm64.
+
+Welcome to PetaLinux 2025.2+release-S11151021 (scarthgap)!
+
+[    5.911904] systemd[1]: Hostname set to <xilinx-vek280-20252>.
+[    5.921907] systemd[1]: Initializing machine ID from random generator.
+[    5.928544] systemd[1]: Installed transient /etc/machine-id file.
+[    6.237313] systemd[1]: Queued start job for default target Multi-User System.
+[    6.266082] systemd[1]: Created slice Slice /system/getty.
+[  OK  ] Created slice Slice /system/getty.
+[    6.284881] systemd[1]: Created slice Slice /system/modprobe.
+[  OK  ] Created slice Slice /system/modprobe.
+[    6.300858] systemd[1]: Created slice Slice /system/serial-getty.
+[  OK  ] Created slice Slice /system/serial-getty.
+[    6.316608] systemd[1]: Created slice User and Session Slice.
+[  OK  ] Created slice User and Session Slice.
+[    6.332132] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[  OK  ] Started Dispatch Password Requests to Console Directory Watch.
+[    6.352064] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password Requests to Wall Directory Watch.
+[    6.371991] systemd[1]: Expecting device /dev/disk/by-label/boot...
+         Expecting device /dev/disk/by-label/boot...
+[    6.388017] systemd[1]: Reached target Path Units.
+[  OK  ] Reached target Path Units.
+[    6.399962] systemd[1]: Reached target Remote File Systems.
+[  OK  ] Reached target Remote File Systems.
+[    6.415970] systemd[1]: Reached target Slice Units.
+[  OK  ] Reached target Slice Units.
+[    6.427972] systemd[1]: Reached target Swaps.
+[  OK  ] Reached target Swaps.
+[    6.462657] systemd[1]: Listening on RPCbind Server Activation Socket.
+[  OK  ] Listening on RPCbind Server Activation Socket.
+[    6.480048] systemd[1]: Reached target RPC Port Mapper.
+[  OK  ] Reached target RPC Port Mapper.
+[    6.498986] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[    6.512216] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+[    6.532581] systemd[1]: Listening on Journal Audit Socket.
+[  OK  ] Listening on Journal Audit Socket.
+[    6.548289] systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+[    6.564398] systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+[    6.580416] systemd[1]: Listening on Network Service Netlink Socket.
+[  OK  ] Listening on Network Service Netlink Socket.
+[    6.596403] systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+[    6.612247] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[    6.628277] systemd[1]: Listening on User Database Manager Socket.
+[  OK  ] Listening on User Database Manager Socket.
+[    6.668055] systemd[1]: Mounting Huge Pages File System...
+         Mounting Huge Pages File System...
+[    6.685913] systemd[1]: Mounting POSIX Message Queue File System...
+         Mounting POSIX Message Queue File System...
+[    6.708202] systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+[    6.728180] systemd[1]: Mounting Kernel Trace File System...
+         Mounting Kernel Trace File System...
+[    6.752302] systemd[1]: Mounting Temporary Directory /tmp...
+         Mounting Temporary Directory /t[    6.760786] systemd[1]: Starting Create List of Static Device Nodes...
+mp...
+         Starting Create List of Static Device Nodes...
+[    6.792345] systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+[    6.818360] systemd[1]: Starting Load Kernel Module dm_mod...
+         Starting Load Kernel Module dm_mod...
+[    6.840401] systemd[1]: Starting Load Kernel Module drm...
+         Starting Load Kernel Module drm...
+[    6.882027] systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+[    6.920210] systemd[1]: Starting Load Kernel Module loop...
+         Starting Load Kernel Module loop...
+[    6.944653] systemd[1]: Starting RPC Bind...
+         Starting RPC Bind...
+[    6.960603] systemd[1]: Starting File System Check on Root Device...
+         Starting File System Check on Root Device...
+[    7.012389] systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+[    7.024361] systemd[1]: Starting Load Kernel Modules...
+         Starting Load Kernel Modules...
+[    7.040444] systemd[1]: Starting Generate network units from Kernel command line...
+         Starting Generate network units from Kernel com[    7.051753] systemd[1]: Starting Coldplug All udev Devices...
+mand line...
+         Starting Coldplug All udev Devices...
+[    7.082953] systemd[1]: Started RPC Bind.
+[  OK  ] Started     7.088045] systemd[1]: Mounted Huge Pages File System.
+;39mRPC Bind.
+[  OK  ] Mou[    7.096631] systemd[1]: Mounted POSIX Message Queue File System.
+[    7.105867] systemd-journald[203]: Collecting audit messages is enabled.
+
+[  OK  ] Mounted     7.106213] systemd[1]: Mounted Kernel Debug File System.
+0;1;39mPOSIX Message Queue File Syste[    7.124252] systemd[1]: Mounted Kernel Trace File System.
+m.
+[  OK  ] Mounted K[    7.133647] openvswitch: Open vSwitch switching datapath
+ernel Debug File System.
+[[    7.141976] systemd[1]: Mounted Temporary Directory /tmp.
+  OK  ] Mounted Kernel Trace File System.
+[  OK  ] Mounted Temporary Directory /tmp.
+[    7.172554] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+[  OK  ] Finished Create List of Static Device Nodes.
+[  OK  ] Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module dm_mod.
+[  OK  ] Finished Load Kernel Module drm.
+[  OK  ] Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module loop.
+[  OK  ] Finished File System Check on Root Device.
+[  OK  ] Finished Load Kernel Modules.
+[  OK  ] Finished Generate network units from Kernel command line.
+         Mounting NFSD configuration filesystem...
+         Mounting Kernel Configuration File System...
+         Starting Remount Root and Kernel File Systems...
+         Starting Apply Kernel Variables...
+         Starting Create Static Device Nodes in /dev gracefully...
+[    7.438013] EXT4-fs (mmcblk0p2): re-mounted 5af3ba7f-2632-4e00-9d88-47df797ad2f1 r/w.
+[  OK  ] Mounted NFSD configuration filesystem.
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[  OK  ] Finished Apply Kernel Variables.
+[  OK  ] Finished Create Static Device Nodes in /dev gracefully.
+         Starting Flush Journal to Persistent Storage...
+[    7.554795] systemd-journald[203]: Received client request to flush runtime journal.
+         Starting Create System Users...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[    7.611062] audit: type=1334 audit(1812451868.796:2): prog-id=6 op=LOAD
+[    7.619503] audit: type=1334 audit(1812451868.804:3): prog-id=7 op=LOAD
+[    7.626185] audit: type=1334 audit(1812451868.804:4): prog-id=8 op=LOAD
+         Starting User Database Manager...
+[  OK  ] Finished Coldplug All udev Devices.
+[  OK  ] Started User Database Manager.
+[  OK  ] Finished Create System Users.
+         Starting Create Static Device Nodes in /dev...
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[  OK  ] Reached target Preparation for Local File Systems.
+         Mounting /var/volatile...
+[    7.834196] audit: type=1334 audit(1812451869.020:5): prog-id=9 op=LOAD
+[    7.840862] audit: type=1334 audit(1812451869.020:6): prog-id=10 op=LOAD
+         Starting Rule-based Manager for Device Events and Files...
+[  OK  ] Mounted /var/volatile.
+         Starting Load/Save OS Random Seed...
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+[    8.329988] xilinx_axienet a4000000.ethernet end0: renamed from eth1
+[    8.405994] macb ff0c0000.ethernet end1: renamed from eth0
+[    8.915907] random: crng init done
+[  OK  ] Finished Load/Save OS Random Seed.
+[  OK  ] Found device /dev/disk/by-label/boot.
+[  OK  ] Reached target Hardware activated USB gadget.
+[  OK  ] Listening on Load/Save RF Kill Switch Status /dev/rfkill Watch.
+         Mounting /boot...
+         Starting Virtual Console Setup...
+[  OK  ] Mounted /boot.
+[  OK  ] Reached target Local File Systems.
+         Starting Rebuild Dynamic Linker Cache...
+         Starting Commit a transient machine-id on disk...
+         Starting Create System Files and Directories...
+[  OK  ] Finished Virtual Console Setup.
+[  OK  ] Finished Create System Files and Directories.
+         Starting Rebuild Journal Catalog...
+[   10.286098] audit: type=1334 audit(1812451871.472:7): prog-id=11 op=LOAD
+         Starting Network Name Resolution...
+[   10.306010] audit: type=1334 audit(1812451871.492:8): prog-id=12 op=LOAD
+         Starting Network Time Synchronization...
+         Starting Record System Boot/Shutdown in UTMP...
+[  OK  ] Finished Commit a transient machine-id on disk.
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Finished Rebuild Journal Catalog.
+[  OK  ] Finished Record System Boot/Shutdown in UTMP.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Started Network Name Resolution.
+[  OK  ] Reached target Host and Network Name Lookups.
+[  OK  ] Finished Rebuild Dynamic Linker Cache.
+         Starting Update is Completed...
+[  OK  ] Finished Update is Completed.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timer Units.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+         Starting sshd.socket...
+[  OK  ] Listening on sshd.socket.
+[  OK  ] Reached target Socket Units.
+[  OK  ] Reached target Basic System.
+[  OK  ] Started Kernel Logging Service.
+[  OK  ] Started System Logging Service.
+         Starting D-Bus System Message Bus...
+         Starting IPv6 Packet Filtering Framework...
+         Starting IPv4 Packet Filtering Framework...
+[   11.101994] audit: type=1334 audit(1812451872.288:9): prog-id=13 op=LOAD
+[   11.108771] audit: type=1334 audit(1812451872.288:10): prog-id=14 op=LOAD
+[   11.115577] audit: type=1334 audit(1812451872.288:11): prog-id=15 op=LOAD
+         Starting User Login Management...
+         Starting OpenSSH Key Generation...
+[  OK  ] Started D-Bus System Message Bus.
+[  OK  ] Finished IPv6 Packet Filtering Framework.
+[  OK  ] Finished IPv4 Packet Filtering Framework.
+[  OK  ] Reached target Preparation for Network.
+[   11.214480] audit: type=1334 audit(1812451872.400:12): prog-id=16 op=LOAD
+         Starting Network Configuration...
+[  OK  ] Started User Login Management.
+[   11.348674] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[   11.383528] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[   11.389589] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[   11.399763] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[   11.408411] cfg80211: failed to load regulatory.db
+[  OK  ] Started Network Configuration.
+[  OK  ] Reached target Network.
+         Starting DNS forwarder and DHCP[   11.482477] macb ff0c0000.ethernet end1: PHY [ff0c0000.ethernet-ffffffff:01] driver [ADIN1300] (irq=POLL)
+ server...
+[   11.494435] macb ff0c0000.ethernet end1: configuring for phy/rgmii-id link mode
+[   11.505896] macb ff0c0000.ethernet: gem-ptp-timer ptp clock registered.
+         Starting Permit User Sessions...
+[   11.548570] xilinx_axienet a4000000.ethernet end0: PHY [axienet-a4000000:02] driver [ADIN1300] (irq=POLL)
+[   11.558198] xilinx_axienet a4000000.ethernet end0: configuring for phy/rgmii-id link mode
+         Starting Target Communication Framework agent...
+[  OK  ] Finished Permit User Sessions.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Started Serial Getty on ttyAMA0.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Started Target Communication Framework agent.
+[  OK  ] Started DNS forwarder and DHCP server.
+[  OK  ] Reached target Multi-User System.
+         Starting Record Runlevel Change in UTMP...
+[  OK  ] Finished Record Runlevel Change in UTMP.
+[  OK  ] Finished OpenSSH Key Generation.
+[   13.604288] xilinx_axienet a4000000.ethernet end0: Link is Up - 100Mbps/Full - flow control off
+
+********************************************************************************************
+The PetaLinux source code and images provided/generated are for demonstration purposes only.
+Please refer to https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2741928025/Moving+from+PetaLinux+to+Production+Deployment
+for more details.
+********************************************************************************************
+PetaLinux 2025.2+release-S11151021 xilinx-vek280-20252 ttyAMA0
+
+xilinx-vek280-20252 login: petalinux
+You are required to change your password immediately (administrator enforced).
+New password: 
+Retype new password: 
+[   19.754979] audit: type=1006 audit(1812451880.940:13): pid=650 uid=0 old-auid=4294967295 auid=1000 tty=(none) old-ses=4294967295 ses=1 res=1
+[   19.767641] audit: type=1300 audit(1812451880.940:13): arch=c00000b7 syscall=64 success=yes exit=4 a0=8 a1=ffffecbbecd0 a2=4 a3=1 items=0 ppid=1 pid=650 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=1 comm="(systemd)" exe="/usr/lib/systemd/systemd-executor" key=(null)
+[   19.794426] audit: type=1327 audit(1812451880.940:13): proctitle="(systemd)"
+xilinx-vek280-20252:~$ 
+xilinx-vek280-20252:~$ ifconfig
+end0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.156  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 2400:1a00:4b2b:ce5e:20a:23ff:fe00:0  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::20a:23ff:fe00:0  prefixlen 64  scopeid 0x20<link>
+        ether 00:0a:23:00:00:00  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 1867 (1.8 KiB)
+        RX errors 0  dropped 3  overruns 0  frame 0
+        TX packets 17  bytes 2199 (2.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+end1: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether c6:13:5f:e7:df:78  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 38  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 80  bytes 6080 (5.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 80  bytes 6080 (5.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+xilinx-vek280-20252:~$ ping 192.168.1.78
+PING 192.168.1.78 (192.168.1.78): 56 data bytes
+64 bytes from 192.168.1.78: seq=0 ttl=64 time=0.270 ms
+64 bytes from 192.168.1.78: seq=1 ttl=64 time=0.129 ms
+64 bytes from 192.168.1.78: seq=2 ttl=64 time=0.139 ms
+64 bytes from 192.168.1.78: seq=3 ttl=64 time=0.118 ms
+64 bytes from 192.168.1.78: seq=4 ttl=64 time=0.164 ms
+64 bytes from 192.168.1.78: seq=5 ttl=64 time=0.137 ms
+64 bytes from 192.168.1.78: seq=6 ttl=64 time=0.146 ms
+[   48.188117] systemd-journald[203]: Time jumped backwards, rotating.
+^C
+--- 192.168.1.78 ping statistics ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 0.118/0.157/0.270 ms
+xilinx-vek280-20252:~$ 
